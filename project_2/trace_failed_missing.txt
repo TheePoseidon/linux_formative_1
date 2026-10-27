@@ -1,0 +1,37 @@
+24596 execve("./backup", ["./backup", "missing.txt", "backup_dir"], 0x7fff45f6b130 /* 121 vars */) = 0
+24596 brk(NULL)                         = 0x595e597a7000
+24596 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7d481cb28000
+24596 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+24596 openat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+24596 fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=68763, ...}) = 0
+24596 mmap(NULL, 68763, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0x7d481cb17000
+24596 close(3</etc/ld.so.cache>)        = 0
+24596 openat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/x86_64-linux-gnu/libc.so.6>
+24596 read(3</usr/lib/x86_64-linux-gnu/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
+24596 pread64(3</usr/lib/x86_64-linux-gnu/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+24596 fstat(3</usr/lib/x86_64-linux-gnu/libc.so.6>, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0
+24596 pread64(3</usr/lib/x86_64-linux-gnu/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+24596 mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0) = 0x7d481c800000
+24596 mmap(0x7d481c828000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0x28000) = 0x7d481c828000
+24596 mmap(0x7d481c9c0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0x1c0000) = 0x7d481c9c0000
+24596 mmap(0x7d481ca0e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0x20e000) = 0x7d481ca0e000
+24596 mmap(0x7d481ca14000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7d481ca14000
+24596 close(3</usr/lib/x86_64-linux-gnu/libc.so.6>) = 0
+24596 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7d481cb14000
+24596 arch_prctl(ARCH_SET_FS, 0x7d481cb14740) = 0
+24596 set_tid_address(0x7d481cb14d68)   = 24596
+24596 set_robust_list(0x7d481cb14a20, 24) = 0
+24596 rseq(0x7d481cb14680, 0x21, 0, 0x53053053) = 0
+24596 mprotect(0x7d481ca0e000, 16384, PROT_READ) = 0
+24596 mprotect(0x595e382bf000, 4096, PROT_READ) = 0
+24596 mprotect(0x7d481cb6d000, 8192, PROT_READ) = 0
+24596 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+24596 getrandom("\x32\xdf\xf5\x8f\x2a\x50\x10\xf4", 8, GRND_NONBLOCK) = 8
+24596 munmap(0x7d481cb17000, 68763)     = 0
+24596 newfstatat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "missing.txt", 0x7ffe7c3ee0b0, 0) = -1 ENOENT (No such file or directory)
+24596 brk(NULL)                         = 0x595e597a7000
+24596 brk(0x595e597c8000)               = 0x595e597c8000
+24596 fstat(1</dev/pts/2>, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x2), ...}) = 0
+24596 write(1</dev/pts/2>, "[FAIL] source check: stat(missin"..., 66) = 66
+24596 exit_group(1)                     = ?
+24596 +++ exited with 1 +++

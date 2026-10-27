@@ -1,0 +1,65 @@
+24600 execve("./backup", ["./backup", "locked.txt", "backup_dir"], 0x7fff296588e0 /* 121 vars */) = 0
+24600 brk(NULL)                         = 0x5ac6de076000
+24600 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7a7dca40a000
+24600 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+24600 openat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+24600 fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=68763, ...}) = 0
+24600 mmap(NULL, 68763, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0x7a7dca3f9000
+24600 close(3</etc/ld.so.cache>)        = 0
+24600 openat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/x86_64-linux-gnu/libc.so.6>
+24600 read(3</usr/lib/x86_64-linux-gnu/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
+24600 pread64(3</usr/lib/x86_64-linux-gnu/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+24600 fstat(3</usr/lib/x86_64-linux-gnu/libc.so.6>, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0
+24600 pread64(3</usr/lib/x86_64-linux-gnu/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+24600 mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0) = 0x7a7dca000000
+24600 mmap(0x7a7dca028000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0x28000) = 0x7a7dca028000
+24600 mmap(0x7a7dca1c0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0x1c0000) = 0x7a7dca1c0000
+24600 mmap(0x7a7dca20e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/x86_64-linux-gnu/libc.so.6>, 0x20e000) = 0x7a7dca20e000
+24600 mmap(0x7a7dca214000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7a7dca214000
+24600 close(3</usr/lib/x86_64-linux-gnu/libc.so.6>) = 0
+24600 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7a7dca3f6000
+24600 arch_prctl(ARCH_SET_FS, 0x7a7dca3f6740) = 0
+24600 set_tid_address(0x7a7dca3f6d68)   = 24600
+24600 set_robust_list(0x7a7dca3f6a20, 24) = 0
+24600 rseq(0x7a7dca3f6680, 0x21, 0, 0x53053053) = 0
+24600 mprotect(0x7a7dca20e000, 16384, PROT_READ) = 0
+24600 mprotect(0x5ac6d2d8f000, 4096, PROT_READ) = 0
+24600 mprotect(0x7a7dca44f000, 8192, PROT_READ) = 0
+24600 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+24600 getrandom("\xb4\x28\x7b\x4a\xdd\x5e\xa8\x3d", 8, GRND_NONBLOCK) = 8
+24600 munmap(0x7a7dca3f9000, 68763)     = 0
+24600 newfstatat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "locked.txt", {st_mode=S_IFREG|000, st_size=37, ...}, 0) = 0
+24600 fstat(1</dev/pts/2>, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x2), ...}) = 0
+24600 brk(NULL)                         = 0x5ac6de076000
+24600 brk(0x5ac6de097000)               = 0x5ac6de097000
+24600 write(1</dev/pts/2>, "[ OK ] source check: locked.txt "..., 43) = 43
+24600 mkdir("backup_dir", 0755)         = -1 EEXIST (File exists)
+24600 write(1</dev/pts/2>, "[ OK ] backup directory already "..., 51) = 51
+24600 openat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "backup_dir/backup.log", O_WRONLY|O_CREAT|O_APPEND, 0644) = 3</home/jay/linux_formative_1/project_2/backup_dir/backup.log>
+24600 write(1</dev/pts/2>, "[ OK ] log file opened: backup_d"..., 46) = 46
+24600 getpid()                          = 24600
+24600 write(3</home/jay/linux_formative_1/project_2/backup_dir/backup.log>, "P#001 [1794584104] pid=24600 bac"..., 75) = 75
+24600 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+24600 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7a7dca3f6a10) = 24601
+24601 set_robust_list(0x7a7dca3f6a20, 24 <unfinished ...>
+24600 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+24601 <... set_robust_list resumed>)    = 0
+24600 <... rt_sigprocmask resumed>, NULL, 8) = 0
+24601 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+24600 wait4(24601 <unfinished ...>
+24601 <... rt_sigprocmask resumed>, NULL, 8) = 0
+24601 openat(AT_FDCWD</home/jay/linux_formative_1/project_2>, "locked.txt", O_RDONLY) = -1 EACCES (Permission denied)
+24601 getpid()                          = 24601
+24601 write(3</home/jay/linux_formative_1/project_2/backup_dir/backup.log>, "C#001 [1794584104] pid=24601 chi"..., 79) = 79
+24601 write(2</dev/pts/2>, "child: cannot open source 'locke"..., 58) = 58
+24601 close(3</home/jay/linux_formative_1/project_2/backup_dir/backup.log>) = 0
+24601 exit_group(10)                    = ?
+24601 +++ exited with 10 +++
+24600 <... wait4 resumed>, [{WIFEXITED(s) && WEXITSTATUS(s) == 10}], 0, NULL) = 24601
+24600 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=24601, si_uid=1000, si_status=10, si_utime=0, si_stime=0} ---
+24600 write(1</dev/pts/2>, "[FAIL] child exited with status "..., 35) = 35
+24600 getpid()                          = 24600
+24600 write(3</home/jay/linux_formative_1/project_2/backup_dir/backup.log>, "P#002 [1794584104] pid=24600 bac"..., 60) = 60
+24600 close(3</home/jay/linux_formative_1/project_2/backup_dir/backup.log>) = 0
+24600 exit_group(1)                     = ?
+24600 +++ exited with 1 +++

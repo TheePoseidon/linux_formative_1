@@ -1,0 +1,3 @@
+P#001 [1794584126] pid=24752 backup started: src=source.txt dir=backup_dir
+C#001 [1794584126] pid=24753 child: copy finished
+P#002 [1794584126] pid=24752 backup OK: backup_dir/source.txt (37 bytes)
