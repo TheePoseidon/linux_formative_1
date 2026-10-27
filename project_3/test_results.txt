@@ -1,0 +1,14 @@
+test_against_statistics_module (test_equivalence.EquivalenceTests.test_against_statistics_module) ... ok
+test_datasets (test_equivalence.EquivalenceTests.test_datasets) ... ok
+test_errors_match (test_equivalence.EquivalenceTests.test_errors_match) ... ok
+test_keywords (test_equivalence.EquivalenceTests.test_keywords) ... ok
+test_no_memory_growth (test_equivalence.EquivalenceTests.test_no_memory_growth) ... ok
+test_no_reference_leaks (test_equivalence.EquivalenceTests.test_no_reference_leaks) ... ok
+test_normalize_properties (test_equivalence.EquivalenceTests.test_normalize_properties) ... ok
+test_parameter_errors_match (test_equivalence.EquivalenceTests.test_parameter_errors_match) ... ok
+test_wrong_argument_count (test_equivalence.EquivalenceTests.test_wrong_argument_count) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 9.372s
+
+OK
