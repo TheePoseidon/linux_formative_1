@@ -1,0 +1,39 @@
+17:57:31 [terminal 1] $ gcc -Wall -Wextra -o server_controller server_controller.c
+17:57:31 [terminal 1] $ ./server_controller
+[Server Controller] Started. PID=35289, state=NORMAL, monitoring every 5 seconds.
+17:57:32 [terminal 2] $ pidof server_controller
+35289
+17:57:32 [terminal 2] $ ps -o pid,stat,cmd -p 35289
+    PID STAT CMD
+  35289 S    ./server_controller
+[Server Controller] Service running normally...
+17:57:38 [terminal 2] $ kill -SIGUSR1 35289
+[Server Controller] STATUS REPORT: state=NORMAL, PID=35289, uptime=7s
+17:57:38 [terminal 2] $ kill -SIGUSR2 35289
+[Server Controller] Mode change (SIGUSR2): NORMAL -> MAINTENANCE
+[Server Controller] Service in MAINTENANCE mode - non-essential tasks suspended...
+17:57:44 [terminal 2] $ kill -SIGUSR1 35289
+[Server Controller] STATUS REPORT: state=MAINTENANCE, PID=35289, uptime=13s
+17:57:44 [terminal 2] $ kill -SIGUSR2 35289
+[Server Controller] Mode change (SIGUSR2): MAINTENANCE -> NORMAL
+[Server Controller] Service running normally...
+17:57:49 [terminal 2] $ kill -SIGUSR1 35289
+[Server Controller] STATUS REPORT: state=NORMAL, PID=35289, uptime=18s
+17:57:50 [terminal 2] $ kill -SIGINT 35289
+[Server Controller] Graceful shutdown requested (SIGINT). Stopping monitoring...
+[Server Controller] Summary: uptime=19s, monitoring ticks=3, status reports=3, mode changes=2, final state=NORMAL
+[Server Controller] Cleanup complete. Closing log file. Goodbye.
+17:57:50 [terminal 1] $ echo $?
+0
+
+17:57:50 [terminal 1] $ ./server_controller
+[Server Controller] Started. PID=35408, state=NORMAL, monitoring every 5 seconds.
+17:57:51 [terminal 2] $ pidof server_controller
+35408
+[Server Controller] Service running normally...
+17:57:57 [terminal 2] $ kill -SIGUSR1 35408
+[Server Controller] STATUS REPORT: state=NORMAL, PID=35408, uptime=7s
+17:57:57 [terminal 2] $ kill -SIGTERM 35408
+[Server Controller] EMERGENCY TERMINATION requested (SIGTERM). Exiting immediately, cleanup skipped.
+17:57:57 [terminal 1] $ echo $?
+143
