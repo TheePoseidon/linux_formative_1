@@ -16,10 +16,8 @@ static void log_msg(const char *msg)
     fprintf(f, "[%ld] %s\n", (long)now, msg);
     fclose(f);
 }
- 
-/* Simple additive/rotating checksum (not cryptographic). */
-static unsigned long checksum_file(const char *path)
-{
+
+static unsigned long checksum_file(const char *path) {
     FILE *f = fopen(path, "rb");
     if (!f) return 0;
     unsigned long sum = 0;
@@ -30,8 +28,7 @@ static unsigned long checksum_file(const char *path)
     return sum;
 }
  
-static int list_dir(const char *path, char names[][256], int max)
-{
+static int list_dir(const char *path, char names[][256], int max) {
     DIR *d = opendir(path);
     if (!d) { perror("opendir"); log_msg("opendir failed"); return -1; }
     int n = 0;
@@ -54,8 +51,7 @@ static int index_of(char names[][256], int n, const char *name)
     return -1;
 }
  
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     if (argc != 3) {
         fprintf(stderr, "usage: %s <src_dir> <dst_dir>\n", argv[0]);
         return 1;
